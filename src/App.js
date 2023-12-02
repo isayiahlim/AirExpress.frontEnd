@@ -1,14 +1,14 @@
 
 import './App.css';
+import React from 'react';
 
-function App() {
+
+const TitleComponent = () => {
   return (
-    <div className="App">
-      <h1>
-        Yo
-      </h1>
-    </div>
+    <header className="title-header">
+      <h1>Your Title</h1>
+    </header>
   );
-}
+};
 
-export default App;
+export default TitleComponent;
