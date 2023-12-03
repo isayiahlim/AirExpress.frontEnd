@@ -24,10 +24,19 @@ const LocationComponent = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <div>
       {buttonVisible && <button onClick={handleGetLocation}>Get My Location</button>}
       {location && (
         <div>
+=======
+    <div className="location-selector" style={{}}>
+      {buttonVisible && <button className="button" onClick={handleGetLocation} 
+      style={{display : 'flex', alignContent : 'center', height : '100%', paddingTop : '10px', paddingBottom : '10px',
+      fontSize : 16}} >Get My Location</button>}
+      {location && (
+        <div style={{ fontSize: 22}}>
+>>>>>>> Stashed changes
           <p>Starting Location: {location.latitude}, {location.longitude}</p>
         </div>
       )}

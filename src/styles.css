@@ -1,0 +1,10 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url(../public/Quicksand-Light.ttf);
+    
+}
+.Quicksand{
+    font-family:'Quicksand';
+}

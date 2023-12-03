@@ -4,9 +4,9 @@ import React from 'react';
 
 const AirportDropdown = () => {
   const airports = [
-    { id: 1, name: 'SeaTac' },
-    { id: 2, name: 'Airport 2' },
-    { id: 3, name: 'Airport 3' },
+    { id: 1, name: 'Sfo International' },
+    { id: 2, name: 'Frankfurt' },
+    { id: 3, name: 'SeaTac' },
     // Add more airports as needed
   ];
 
