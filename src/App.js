@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import AirportDropdown from './ChooseAirport';
 import FlightInput from './InputFlight';
 import LocationComponent from './StartLocation';
@@ -33,6 +33,37 @@ const TitleComponent = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+  const [times, setTimes] = useState([
+    { id: 1, time: '00:00', name: 'Estimate Driving' },
+    { id: 2, time: '00:00', name: 'Estimate Parking' },
+    { id: 3, time: '00:00', name: 'Estimate Security' },
+    { id: 4, time: '00:00', name: 'Flight Departure' }
+  ]);
+
+  const [changePartTime, setChangePartTime] = useState('00:00');
+
+  const handleCalculateClick = () => {
+    // Update times for each box when Calculate button is clicked
+    const updatedTimes = times.map(item => {
+      // Logic to assign different times to each box (you can adjust these values)
+      switch (item.id) {
+        case 1:
+          return { ...item, time: '10:00' };
+        case 2:
+          return { ...item, time: '11:30' };
+        case 3:
+          return { ...item, time: '12:45' };
+        case 4:
+          return { ...item, time: '09:45 AM' };
+        default:
+          return item;
+      }
+    });
+    setChangePartTime('12:00 PM');
+    setTimes(updatedTimes);
+  };
+
   return (
     <div style={{ textAlign: 'center', backgroundColor: '#F3F3F3' }} className="Quicksand">
       {/* Header */}
@@ -108,33 +139,23 @@ const TitleComponent = () => {
                 <pre>{JSON.stringify(data, null, 2)}</pre>
               </div>
             )}
-            <Calculate />
+            <Calculate onCalculateClick={handleCalculateClick}/>
           </div>
         </div>
       </div>
 
       {/* Three boxes aligned horizontally */}
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        {/* Box 1 (similar to Airport Dropdown) */}
-        <div className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px', marginRight: '10px' }}>
-          {/* Your content for Box 1 */}
-          {/* Example content: */}
-          <h2>Box hey</h2>
-        </div>
-
-        {/* Box 2 (similar to Airport Dropdown) */}
-        <div className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px', marginRight: '10px' }}>
-          {/* Your content for Box 2 */}
-          {/* Example content: */}
-          <h2>Box 2</h2>
-        </div>
-
-        {/* Box 3 (similar to Airport Dropdown) */}
-        <div className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px' }}>
-          {/* Your content for Box 3 */}
-          {/* Example content: */}
-          <h2>Box 3</h2>
-        </div>
+        {times.map((box, index) => (
+          <div key={index} className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px' }}>
+            <h1>{box.time}</h1>
+            <h2>{box.name}</h2>
+          </div>
+        ))}
+      </div>
+      <div>
+        <h1>You should Leave at</h1>
+        <h1 style={{ fontSize: '100px' }}>{changePartTime}</h1>
       </div>
 
       {/* Bottom Box */}
