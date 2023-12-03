@@ -38,7 +38,7 @@ const TitleComponent = () => {
       {/* Header */}
       <header className="title-header">
         <h1 style = {{fontSize : 120}}> -- AirExpress -- </h1>
-        <p style = {{fontSize : 30}}> Saving Time For Travelers Since 2023 </p>
+        <p style = {{fontSize : 30}}> Saving Time For Travelers Since 2023! </p>
       </header>
 
       <header className='box'>
