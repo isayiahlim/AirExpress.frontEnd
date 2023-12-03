@@ -14,9 +14,8 @@
   margin-top: 20px; /* Adjust margin top as needed */
   width: 1000px; /* Set the width of the box */
   margin: 20px auto; /* Center the box horizontally */
+  height: 700px;
 }
-
-
 
 .info-text {
   text-align: center;
