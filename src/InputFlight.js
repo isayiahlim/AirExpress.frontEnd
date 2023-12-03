@@ -3,12 +3,10 @@
 import React from 'react';
 import './App.css'; // Import the FlightInput CSS file
 
-const FlightInput = () => {
-  const handleFlightInputChange = (e) => {
-    // Handle changes in the flight input textbox
-    const flightNumber = e.target.value;
-    console.log('Flight Number:', flightNumber);
-    // Perform any actions based on the flight number input
+const FlightInput = ({ onFlightInputChange }) => {
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    onFlightInputChange(inputValue);
   };
 
 
@@ -19,7 +17,7 @@ const FlightInput = () => {
           type="text"
           id="flightInput"
           placeholder="Enter flight number"
-          onChange={handleFlightInputChange}
+          onChange={handleInputChange}
           className="flight-input"
           style={{ border: 'none',  marginLeft: '50px' }}
         />

@@ -40,29 +40,42 @@ const TitleComponent = () => {
     { id: 3, time: '00:00', name: 'Estimate Security' },
     { id: 4, time: '00:00', name: 'Flight Departure' }
   ]);
-
+  
   const [changePartTime, setChangePartTime] = useState('00:00');
-
-  const handleCalculateClick = () => {
-    // Update times for each box when Calculate button is clicked
-    const updatedTimes = times.map(item => {
-      // Logic to assign different times to each box (you can adjust these values)
-      switch (item.id) {
-        case 1:
-          return { ...item, time: '10:00' };
-        case 2:
-          return { ...item, time: '11:30' };
-        case 3:
-          return { ...item, time: '12:45' };
-        case 4:
-          return { ...item, time: '09:45 AM' };
-        default:
-          return item;
-      }
-    });
-    setChangePartTime('12:00 PM');
-    setTimes(updatedTimes);
+  const [isFlightNumberCorrect, setIsFlightNumberCorrect] = useState(false);
+  
+  const handleFlightInputChange = (flightNumber) => {
+    if (flightNumber === '135246') {
+      setIsFlightNumberCorrect(true);
+    } else {
+      setIsFlightNumberCorrect(false);
+    }
   };
+  
+  const handleCalculateClick = () => {
+    if (isFlightNumberCorrect) {
+      const updatedTimes = times.map(item => {
+        // Logic to assign different times to each box (you can adjust these values)
+        switch (item.id) {
+          case 1:
+            return { ...item, time: '10:00' };
+          case 2:
+            return { ...item, time: '11:30' };
+          case 3:
+            return { ...item, time: '12:45' };
+          case 4:
+            return { ...item, time: '09:45 AM' };
+          default:
+            return item;
+        }
+      });
+      setChangePartTime('12:00 PM');
+      setTimes(updatedTimes);
+    }
+  };
+  
+
+  
 
   return (
     <div style={{ textAlign: 'center', backgroundColor: '#F3F3F3' }} className="Quicksand">
@@ -109,7 +122,7 @@ const TitleComponent = () => {
         <div className="dropdown-container" style={{ display: 'flex', alignItems: 'center', margin: '0 auto', width: 'fit-content' }}>
           <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '20px' }}>Input Flight Number</p>
           <div className="flight-selector" style={{ marginBottom: '8px' }}>
-            <FlightInput />
+            <FlightInput onFlightInputChange={handleFlightInputChange}/>
           </div>
         </div>
 
@@ -144,19 +157,41 @@ const TitleComponent = () => {
         </div>
       </div>
 
-      {/* Three boxes aligned horizontally */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        {times.map((box, index) => (
-          <div key={index} className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px' }}>
-            <h1>{box.time}</h1>
-            <h2>{box.name}</h2>
+      {isFlightNumberCorrect ? (
+        <div>
+          {/* Display only the four boxes horizontally */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            {times.map((box, index) => (
+              <div key={index} className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px', margin: '0 10px' }}>
+                <h1>{box.time}</h1>
+                <h2>{box.name}</h2>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div>
-        <h1>You should Leave at</h1>
-        <h1 style={{ fontSize: '100px' }}>{changePartTime}</h1>
-      </div>
+          {/* Display 'You should Leave at' */}
+          <div>
+            <h1>You should Leave at</h1>
+            <h1 style={{ fontSize: '100px' }}>{changePartTime}</h1>
+          </div>
+        </div>
+      ) : (
+        <div>
+          {/* Display default times */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            {times.map((box, index) => (
+              <div key={index} className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px', margin: '0 10px' }}>
+                <h1>00:00</h1>
+                <h2>{box.name}</h2>
+              </div>
+            ))}
+          </div>
+          {/* Display default 'You should Leave at' */}
+          <div>
+            <h1>You should Leave at</h1>
+            <h1 style={{ fontSize: '100px' }}>00:00</h1>
+          </div>
+        </div>
+      )}
 
       {/* Bottom Box */}
       <div style={{ backgroundColor: '#A4B7FF', padding: '20px 0', marginTop: '100px' }}>
