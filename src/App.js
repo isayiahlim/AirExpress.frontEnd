@@ -87,7 +87,7 @@ const TitleComponent = () => {
         <div className="input-box" style={{ backgroundColor: '#FFF', width: '200px', height: '150px', marginRight: '10px' }}>
           {/* Your content for Box 1 */}
           {/* Example content: */}
-          <h2>Box 1</h2>
+          <h2>Box hey</h2>
         </div>
 
         {/* Box 2 (similar to Airport Dropdown) */}
