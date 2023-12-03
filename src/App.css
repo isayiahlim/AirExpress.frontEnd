@@ -7,6 +7,24 @@
   text-align: center; /* Center align the title */
 }
 
+.input-box {
+  border: 2px solid #ccc; /* Border style */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding around the box */
+  margin-top: 20px; /* Adjust margin top as needed */
+  width: 1000px; /* Set the width of the box */
+  margin: 20px auto; /* Center the box horizontally */
+}
+
+
+
+.info-text {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin-top as needed */
+  font-size: 60px; /* Adjust the font size */
+  font-weight: bold; /* Optionally set font weight */
+}
+
 .airport-selector {
   /* Styling for the entire airport selector container */
   margin-bottom: 20px;
@@ -66,4 +84,31 @@
   width: 200px;
   height: 20px;
 }
+
+/*Location Button*/
+
+.location-selector {
+  /* Styling for the entire airport selector container */
+  margin-bottom: 20px; /* Example margin */
+}
+
+/* Button styling */
+.button {
+  display: inline-block;
+  border-radius: 20px; /* Set the border-radius to make it round */
+  border: 2px solid #4199ff; /* Example border */
+  overflow: hidden;
+  background-color: #fff; /* Background color */
+  width: 200px; /* Set a width for the dropdown */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover effect for the button */
+.button:hover {
+  background-color: #2e75d9; /* Change background color on hover */
+}
+
+
 
