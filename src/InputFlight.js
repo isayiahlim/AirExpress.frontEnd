@@ -14,7 +14,6 @@ const FlightInput = () => {
 
   return (
     <div className="flight-selector" style={{ marginTop: '30px', marginLeft: '100px'}}>
-      <label htmlFor="airportDropdown">Input Flight Number  </label>
       <div className="custom-input" style={{ marginTop: '30px'}}>
         <input
           type="text"

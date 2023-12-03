@@ -24,15 +24,16 @@ const LocationComponent = () => {
   };
 
   return (
-    <div>
-      {buttonVisible && <button onClick={handleGetLocation}>Get My Location</button>}
+    <div className="location-selector" style={{ marginTop: '70px', marginLeft: '100px' }}>
+      {buttonVisible && <button className="button" onClick={handleGetLocation} >Get My Location</button>}
       {location && (
-        <div>
+        <div style={{ marginTop: '30px' }}>
           <p>Starting Location: {location.latitude}, {location.longitude}</p>
         </div>
       )}
     </div>
   );
+  
 };
 
 export default LocationComponent;

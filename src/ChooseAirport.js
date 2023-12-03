@@ -19,7 +19,7 @@ const AirportDropdown = () => {
 
   return (
     <div className="airport-selector" style={{ marginTop: '50px', marginLeft: '100px'}}>
-      <label htmlFor="airportDropdown">Choosing Airport  </label>
+      
       <div className="custom-dropdown" style={{ marginTop: '30px'}}>
         <select id="airportDropdown" style={{ border: 'none',  marginLeft: '50px' }} onChange={handleChange}>
           <option value="">Select an airport</option>
