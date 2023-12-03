@@ -24,8 +24,7 @@ const LocationComponent = () => {
   };
 
   return (
-    <div className="location-selector" style={{ marginTop: '30px', marginLeft: '100px' }}>
-      <p>Click this for location</p>
+    <div className="location-selector" style={{ marginTop: '70px', marginLeft: '100px' }}>
       {buttonVisible && <button className="button" onClick={handleGetLocation} >Get My Location</button>}
       {location && (
         <div style={{ marginTop: '30px' }}>
