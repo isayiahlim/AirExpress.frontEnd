@@ -22,6 +22,7 @@ const FlightInput = () => {
           placeholder="Enter flight number"
           onChange={handleFlightInputChange}
           className="flight-input"
+          style={{ border: 'none',  marginLeft: '50px' }}
         />
       </div>
     </div>
