@@ -8,18 +8,17 @@ import TsaCheckBox from './DriveOption';
 
 const TitleComponent = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', backgroundColor: '#E5E5E5' }}>
       {/* Header */}
       <header className="title-header">
         <h1>AirExpress</h1>
       </header>
 
       {/* Location Component */}
-
       <div className="dropdown-container" style={{ display: 'flex', alignItems: 'center', margin: '0 auto', width: 'fit-content' }}>
-          <div style={{ marginBottom: '30px', marginRight: '100px'}}>
-            <LocationComponent />
-          </div>
+        <div style={{ marginBottom: '30px', marginRight: '100px' }}>
+          <LocationComponent />
+        </div>
       </div>
 
       {/* Info Text */}
@@ -39,7 +38,7 @@ const TitleComponent = () => {
         {/* Flight Input */}
         <div className="dropdown-container" style={{ display: 'flex', alignItems: 'center', margin: '0 auto', width: 'fit-content' }}>
           <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '20px' }}>Input Flight Number</p>
-          <div className="flight-selector" style={{ marginBottom: '8px' }} >
+          <div className="flight-selector" style={{ marginBottom: '8px' }}>
             <FlightInput />
           </div>
         </div>

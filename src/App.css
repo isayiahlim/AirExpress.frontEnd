@@ -8,8 +8,9 @@
 }
 
 .input-box {
+  background-color: white;
   border: 2px solid #ccc; /* Border style */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 25px; /* Rounded corners */
   padding: 20px; /* Padding around the box */
   margin-top: 20px; /* Adjust margin top as needed */
   width: 1000px; /* Set the width of the box */
