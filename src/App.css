@@ -1,10 +1,15 @@
 /* TitleComponent.css */
 
 .title-header {
-  background-color: blue; /* Blue background color */
+  background-color: rgb(0, 0, 210); /* Blue background color */
   color: white; /* Text color */
   padding: 20px; /* Adjust the padding as needed */
   text-align: center; /* Center align the title */
+}
+
+.box {
+  background-color: rgb(0, 100, 250);
+  padding: 10px; /* Adjust the padding as needed */
 }
 
 .input-box {
@@ -101,7 +106,7 @@
   background-color: #fff; /* Background color */
   width: 200px; /* Set a width for the dropdown */
   height: 60px;
-  display: flex;
+  
   flex-direction: column;
   align-items: center;
 }
