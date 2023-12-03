@@ -101,6 +101,13 @@ const TitleComponent = () => {
         {/* Calculate */}
         <div className="dropdown-container" style={{ display: 'flex', alignItems: 'center', margin: '0 auto', width: 'fit-content' }}>
           <div style={{ marginBottom: '30px', marginRight: '100px' }}>
+          {/* Display the fetched data */}
+            {data && (
+              <div>
+                <h2>Fetched Data:</h2>
+                <pre>{JSON.stringify(data, null, 2)}</pre>
+              </div>
+            )}
             <Calculate />
           </div>
         </div>
