@@ -4,5 +4,65 @@
   background-color: blue; /* Blue background color */
   color: white; /* Text color */
   padding: 20px; /* Adjust the padding as needed */
-  text-align: center/* Center align the title */
+  text-align: center; /* Center align the title */
 }
+
+.airport-selector {
+  /* Styling for the entire airport selector container */
+  margin-bottom: 20px;
+}
+
+.custom-dropdown {
+  /* Styling for the custom dropdown box */
+  display: inline-block;
+  border-radius: 20px; /* Set the border-radius to make it round */
+  border: 2px solid #4199ff; /* Example border */
+  overflow: hidden;
+  background-color: #fff; /* Background color */
+  width: 200px; /* Set a width for the dropdown */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-dropdown select {
+  /* Styling for the actual dropdown */
+  appearance: none;
+  outline: none;
+  border: none;
+  padding: 8px;
+  width: calc(100% - 25px); /* Adjust width as needed */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom-dropdown select:focus {
+  /* Optional focus style for the dropdown */
+  border: 1px solid blue; /* Example border color on focus */
+}
+
+/* FlightInput.css */
+
+.flight-selector {
+  /* Styling for the entire airport selector container */
+  margin-bottom: 20px; /* Example margin */
+}
+
+.custom-input {
+  /* Styling for the custom dropdown box */
+  display: inline-block;
+  border-radius: 20px; /* Set the border-radius to make it round */
+  border: 2px solid #4199ff; /* Example border */
+  overflow: hidden;
+  background-color: #fff; /* Background color */
+  width: 200px; /* Set a width for the dropdown */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flight-input {
+  padding: 6px;
+  width: 200px;
+}
+

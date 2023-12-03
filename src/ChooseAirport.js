@@ -1,0 +1,37 @@
+// AirportDropdown.js
+
+import React from 'react';
+
+const AirportDropdown = () => {
+  const airports = [
+    { id: 1, name: 'SeaTac' },
+    { id: 2, name: 'Airport 2' },
+    { id: 3, name: 'Airport 3' },
+    // Add more airports as needed
+  ];
+
+  const handleChange = (e) => {
+    // Handle selected airport change if needed
+    const selectedAirportId = e.target.value;
+    console.log('Selected Airport ID:', selectedAirportId);
+    // Perform any actions based on the selected airport
+  };
+
+  return (
+    <div className="airport-selector" style={{ marginTop: '50px', marginLeft: '100px'}}>
+      <label htmlFor="airportDropdown">Choosing Airport:  </label>
+      <div className="custom-dropdown">
+        <select id="airportDropdown" onChange={handleChange}>
+          <option value="">Select an airport</option>
+          {airports.map((airport) => (
+            <option key={airport.id} value={airport.id}>
+              {airport.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export default AirportDropdown;
