@@ -12,6 +12,12 @@
   padding: 10px; /* Adjust the padding as needed */
 }
 
+.box2 {
+  background-color: blue;
+  color: white;
+  padding: 0px; /* Adjust the padding as needed */
+}
+
 .input-box {
   background-color: white;
   border: 2px solid #ccc; /* Border style */

@@ -12,7 +12,7 @@ const TitleComponent = () => {
     <div style={{ textAlign: 'center', backgroundColor: '#F3F3F3' }}>
       {/* Header */}
       <header className="title-header">
-        <h1 style = {{fontSize : 120}}> -- AirExpress -- </h1>
+        <h1 style = {{fontSize : 115}}> -- AirExpress -- </h1>
         <p style = {{fontSize : 30}}> Saving Time For Travelers Since 2023 </p>
       </header>
 
@@ -21,11 +21,12 @@ const TitleComponent = () => {
       </header>
 
       {/*Description*/}
-      <body style = {{marginTop : 50}}>
-        <p> Tired of missing flights? Tired of waiting in the terminal for hours? Tired of sitting in the phone lot, never knowing if your loved one will ever arrive? With  AirExpress,</p>
-        <p> we calculate when to leave for the airport? taking into account traffic, security check times, updated flight delays, and everything else under the sun (pun intended).</p> 
-        <p> Plug in your starting point(or current location), your destination airport, your flight number, whether you're parking, getting dropped off, or picking someone up, and</p>
-        <p> your security check status, and you'll never be left wondering when to leave ever again! </p>
+      <body style = {{marginTop : 30, fontSize : 20}}>
+        <p> Tired of missing flights? Tired of waiting in the terminal for hours? Tired of sitting in the phone lot, never knowing if your loved </p>
+        <p> one will ever arrive? With AirExpress, we calculate when to leave for the airport? taking into account traffic, security check times,</p> 
+        <p> updated flight delays, and everything else under the sun (pun intended). Simply plug in your starting point(or current location), </p>
+        <p> your destination airport, your flight number, whether you're parking, getting dropped off, or picking someone up, and your security </p>
+        <p> check status, and you'll never be left wondering when to leave ever again! </p>
       </body>
 
       {/* Location Component */}

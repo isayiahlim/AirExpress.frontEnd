@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const LocationComponent = () => {
   const [location, setLocation] = useState(null);
@@ -24,10 +25,10 @@ const LocationComponent = () => {
   };
 
   return (
-    <div className="location-selector" style={{ marginTop: '50px'}}>
+    <div className="location-selector">
       {buttonVisible && <button className="button" onClick={handleGetLocation} >Get My Location</button>}
       {location && (
-        <div style={{ marginTop: '30px' }}>
+        <div className =  'box2' style={{fontSize : 25, fontStyle: 'bold'}}>
           <p>Starting Location: {location.latitude}, {location.longitude}</p>
         </div>
       )}
