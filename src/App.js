@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import AirportDropdown from './ChooseAirport';
 import FlightInput from './InputFlight';
@@ -7,7 +8,31 @@ import TsaCheckBox from './DriveOption';
 import Calculate from './Calculations';
 import './styles.css';
 
+import axios from 'axios';
+
 const TitleComponent = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Define the URL of your backend API
+    const apiUrl = 'http://localhost:5000'; // Replace with your backend URL
+
+    // Make an HTTP GET request to the backend API
+    axios.get(apiUrl)
+      .then(response => {
+        if (response.status === 200) {
+          // Handle the successful response here
+          setData(response.data); // Store the data in component state
+        } else {
+          // Handle other response statuses (e.g., error)
+          console.error(`HTTP error! Status: ${response.status}`);
+        }
+      })
+      .catch(error => {
+        // Handle network errors or other issues
+        console.error('Error fetching data:', error);
+      });
+  }, []);
   return (
     <div style={{ textAlign: 'center', backgroundColor: '#F3F3F3' }} className="Quicksand">
       {/* Header */}
