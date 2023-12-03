@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import AirportDropdown from './ChooseAirport';
 import FlightInput from './InputFlight';
 import LocationComponent from './StartLocation';
@@ -7,7 +7,6 @@ import DriveCheckBox from './DriveCheckBox';
 import TsaCheckBox from './DriveOption';
 import Calculate from './Calculations';
 import './styles.css';
-
 import axios from 'axios';
 
 const TitleComponent = () => {
@@ -15,7 +14,7 @@ const TitleComponent = () => {
 
   useEffect(() => {
     // Define the URL of your backend API
-    const apiUrl = 'http://localhost:5000'; // Replace with your backend URL
+    const apiUrl = 'http://localhost:3000'; // Replace with your backend URL
 
     // Make an HTTP GET request to the backend API
     axios.get(apiUrl)

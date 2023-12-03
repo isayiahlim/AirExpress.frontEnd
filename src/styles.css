@@ -1,7 +1,7 @@
 /* styles.css */
 @font-face {
     font-family: 'Quicksand';
-    src: url(/Users/youngjune/Documents/GitHub/AirExpress.frontEnd/public/Quicksand-Light.ttf);
+    src: url(../public/Quicksand-Light.ttf);
     
 }
 .Quicksand{

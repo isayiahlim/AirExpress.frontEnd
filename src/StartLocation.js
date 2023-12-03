@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const LocationComponent = () => {
   const [location, setLocation] = useState(null);
@@ -9,19 +10,47 @@ const LocationComponent = () => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
+          console.log('got coords');
           setLocation({ latitude, longitude });
           setButtonVisible(false); // Hide the button after obtaining the location
+
+          // Send the obtained location to backend
+          sendLocationToBackend({ latitude, longitude });
+
         },
         (error) => {
           console.error('Error getting location:', error);
-          // Handle errors such as user denying location access
         }
       );
     } else {
       console.error('Geolocation is not supported by this browser');
-      // Handle cases where geolocation is not supported
     }
   };
+
+// Function to send location data to the backend and trigger route calculation
+const sendLocationToBackend = async (latitude, longitude) => {
+  const backendApiUrl = 'http://localhost:5000/getRoute';
+
+  // JavaScript object to send as the request body
+  const requestData = {
+    latitude,
+    longitude,
+  };
+
+  // Make a POST request to the backend API
+  axios.post(backendApiUrl, requestData)
+    .then(console.log("POSTING"))
+    .then(response => {
+      if (response.status === 200) {
+        console.log('User location sent to the backend successfully.');
+      } else {
+        console.error(`HTTP error! Status: ${response.status}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error sending user location:', error);
+    });
+};
 
   return (
     <div className="location-selector" style={{ marginTop: '50px'}}>
