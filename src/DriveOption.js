@@ -24,6 +24,7 @@ function TsaCheckBox() {
                     value = "Normal"
                     checked = {selectedOption === 'Normal'}
                     onChange = {handleOptionChange}
+                    style={{ marginLeft: '50px'}}
                 />
                 Normal Security Check
             </label>
@@ -33,6 +34,7 @@ function TsaCheckBox() {
                     value = "N/A"
                     checked = {selectedOption === 'N/A'}
                     onChange = {handleOptionChange}
+                    style={{ marginLeft: '50px'}}
                 />
                 N/A
             </label>

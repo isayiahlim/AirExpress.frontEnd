@@ -24,6 +24,7 @@ function DriveCheckBox() {
                     value = "Getting Dropped Off"
                     checked = {selectedOption === 'Getting Dropped Off'}
                     onChange = {handleOptionChange}
+                    style={{ marginLeft: '50px'}}
                 />
                 Getting Dropped Off
             </label>
@@ -33,6 +34,7 @@ function DriveCheckBox() {
                     value = "Picking Up"
                     checked = {selectedOption === 'Picking Up'}
                     onChange = {handleOptionChange}
+                    style={{ marginLeft: '50px'}}
                 />
                 Picking Up
             </label>

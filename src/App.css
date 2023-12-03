@@ -90,7 +90,7 @@
   height: 20px;
 }
 
-/*Location Button*/
+/*Button*/
 
 .location-selector {
   /* Styling for the entire airport selector container */
@@ -113,7 +113,7 @@
 
 /* Hover effect for the button */
 .button:hover {
-  background-color: #2e75d9; /* Change background color on hover */
+  background-color: #cfcfcf; /* Change background color on hover */
 }
 
 

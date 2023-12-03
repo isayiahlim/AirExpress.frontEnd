@@ -1,4 +1,6 @@
 import React from 'react';
+import './styles.css';
+
 
 function Calculate() {
   // Function to handle button click
@@ -8,22 +10,11 @@ function Calculate() {
   };
 
   return (
-    <button
-      className="custom-button"
-      style={{
-        padding: '10px 20px',
-        backgroundColor: 'blue',
-        color: 'white',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        alignItems: 'center',
-        
-      }}
-      onClick={handleClick}
-    >
-      Estimated Departure:
-    </button>
+    <div className="location-selector" style={{ marginTop: '70px', marginLeft: '100px' }} >
+      <button className="button" onClick={handleClick}>
+        Start Estimation!
+      </button>
+    </div>
   );
 }
 
