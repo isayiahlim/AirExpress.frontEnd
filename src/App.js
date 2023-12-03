@@ -5,10 +5,11 @@ import FlightInput from './InputFlight';
 import LocationComponent from './StartLocation';
 import DriveCheckBox from './DriveCheckBox';
 import TsaCheckBox from './DriveOption';
+import Calculate from './Calculations';
 
 const TitleComponent = () => {
   return (
-    <div style={{ textAlign: 'center', backgroundColor: '#E5E5E5' }}>
+    <div style={{ textAlign: 'center', backgroundColor: '#F3F3F3' }}>
       {/* Header */}
       <header className="title-header">
         <h1>AirExpress</h1>
@@ -23,7 +24,7 @@ const TitleComponent = () => {
 
       {/* Info Text */}
       <div className="info-text" style={{ margin: '0 auto' }}>
-        <p>Place in your Info</p>
+        <p>Place in your Information</p>
       </div>
 
       {/* Airport Dropdown */}
@@ -58,6 +59,13 @@ const TitleComponent = () => {
             <TsaCheckBox />
           </div>
         </div>
+
+        {/* Calculate */}
+        <div className="dropdown-container" style={{ display: 'flex', alignItems: 'center', margin: '0 auto', width: 'fit-content' }}>
+        <div style={{ marginBottom: '30px', marginRight: '100px' }}>
+          <Calculate />
+        </div>
+      </div>
       </div>
     </div>
   );
